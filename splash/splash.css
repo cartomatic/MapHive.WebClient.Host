@@ -1,0 +1,42 @@
+﻿HTML { height: 100%; }
+#splash-screen-container
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+}
+#splash-screen-mask
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: #ccc;
+
+    -moz-opacity: 0.5;
+    opacity: .50;
+    filter: alpha(opacity=50);
+}
+
+#load-info-container
+{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    background-color: white;
+    border: 1px solid gray;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    font-variant: normal;
+    text-align: center;
+}
