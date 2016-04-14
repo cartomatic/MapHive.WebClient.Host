@@ -8,7 +8,7 @@ docs/docs/
 .idea
 
 #ignore a linked gm package folder
-/packages/local/gm/
+/packages/local/mh/
 
 ############
 # Sencha #
