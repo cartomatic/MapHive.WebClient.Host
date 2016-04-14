@@ -12,13 +12,25 @@
 
         extend: 'Ext.app.Controller',
 
+        mixins: [
+            'mh.msgBus.Global'
+        ],
+
+        requires: [
+            'MapHive.view.main.Viewport'
+        ],
+
+        /**
+         * @event root::authenticateuser
+         */
+
         init: function(){
             //<debug>
             console.warn("[ROOT CTRL initialised]");
             //</debug>
 
             //setup the required evt listeners
-
+            this.watchGlobal('auth::userauthenticated', this.onUserAuthenticated, this, {single: true});
         },
 
         onLaunch: function(){
@@ -29,7 +41,21 @@
             //do whatever needs to be done...
 
             //and when ready request the user auth!
+            this.fireGlobal('root::authenticateuser');
+        },
 
+        /**
+         * 'auth::userauthenticated' evt listener
+         * @param authData
+         */
+        onUserAuthenticated: function(evtData){
+            console.log('User authenticated, can now continue with the app launch!', evtData);
+
+            //Note:
+            //Both toolkits need a main view. So this is crucial each toolkit has the same entry point!
+            //in this case though, the GUI creation is delegated to toolkit specific code, not directly created here
+
+            Ext.create('MapHive.AppLauncher');
         }
     });
 

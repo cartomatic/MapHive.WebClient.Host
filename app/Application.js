@@ -14,7 +14,7 @@
         extend: 'Ext.app.Application',
 
         requires: [
-            'mh.util.console.Logger'
+            'mh.util.console.Custom'
         ],
 
         name: 'MapHive',
@@ -38,21 +38,9 @@
             //<debug>
             console.warn('[APP] initialised');
             //</debug>
-
-            //some IE8 specific stuff for debugging...
-            if(Ext.browser.is.IE8){
-                console = {
-                    warn: Ext.emptyFn,
-                    log: Ext.emptyFn,
-                    error: Ext.emptyFn
-                };
-            }
         },
 
         launch: function () {
-            //init Ext quick tips
-            //Ext.QuickTips.interceptTitles = true;
-            Ext.QuickTips.init();
 
             //hide the splash screen
             splash.hide();

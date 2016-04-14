@@ -9,7 +9,7 @@ Ext.application({
     extend: 'MapHive.Application',
 
     requires: [
-    ],
+    ]
 
     //Do not create a view yet. Let the app decide how to handle it
     //mainView: 'MapHive.view.main.Main'

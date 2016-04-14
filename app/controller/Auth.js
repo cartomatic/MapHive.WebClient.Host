@@ -10,13 +10,21 @@
     Ext.define('MapHive.controller.Auth', {
         extend: 'Ext.app.Controller',
 
+        mixins: [
+            'mh.msgBus.Global'
+        ],
+
+        /**
+         * @event auth::userauthenticated
+         */
+
         init: function(){
             //<debug>
             console.warn("[AUTH CTRL initialised]");
             //</debug>
 
             //setup the required evt listeners
-
+            this.watchGlobal('root::authenticateuser', this.onAuthenticateUser, this, {single: true});
 
         },
 
@@ -26,6 +34,23 @@
             //</debug>
 
             //so far nothing to do here
+        },
+
+        onAuthenticateUser: function(evtData){
+            console.log('Received root::authenticateuser evt with the following data: ', evtData);
+            console.log('Faking authentication...');
+
+            //Note:
+            //Authentication will require some UI. So it is crucial, there is a the same login view entry point for both toolkits.
+            //otherwise requires will cause problems!
+
+            var me = this;
+            setTimeout(
+                function(){
+                    me.fireGlobal('auth::userauthenticated', 'some auth feedback data');
+                },
+                1000
+            );
         }
     });
 
