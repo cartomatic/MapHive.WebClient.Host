@@ -10,7 +10,10 @@
     Ext.define('MapHive.AppLauncher', {
 
         requires: [
-            'MapHive.view.main.Viewport'
+            'Ext.tip.QuickTipManager',
+            'Ext.window.Window',
+            'MapHive.view.main.Viewport',
+            'mh.widget.auth.LockingScreen'
         ],
 
         constructor: function(config){
@@ -22,6 +25,13 @@
 
             //init the GUI
             Ext.create('MapHive.view.main.Viewport');
+
+            Ext.create('mh.widget.auth.LockingScreen').show();
+
+            Ext.create('Ext.window.Window', {
+                title: 'Window title',
+                html: 'Am I gonna by styled or what?'
+            }).show();
         }
     });
 }());

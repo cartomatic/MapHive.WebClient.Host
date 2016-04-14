@@ -9,6 +9,7 @@ docs/docs/
 
 #ignore a linked gm package folder
 /packages/local/mh/
+/packages/local/codaxy*/
 
 ############
 # Sencha #
