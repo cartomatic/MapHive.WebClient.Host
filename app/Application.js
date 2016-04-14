@@ -13,10 +13,16 @@
     Ext.define('MapHive.Application', {
         extend: 'Ext.app.Application',
 
+        requires: [
+            'mh.util.console.Logger'
+        ],
+
         name: 'MapHive',
 
         //global shared controllers - they fire up automatically
         controllers: [
+            'MapHive.controller.Root',
+            'MapHive.controller.Auth'
         ],
 
         //global / shared stores
@@ -28,6 +34,11 @@
         defaultToken : 'dashboard',
 
         init: function(){
+
+            //<debug>
+            console.warn('[APP] initialised');
+            //</debug>
+
             //some IE8 specific stuff for debugging...
             if(Ext.browser.is.IE8){
                 console = {
@@ -47,8 +58,17 @@
             splash.hide();
 
             //<debug>
-            console.warn('[APP] launch');
+            console.warn('[APP] launched');
             //</debug>
+
+            //Note:
+            //In the generic code cannot require modules that are toolkit specific!
+            //This is important as if some toolkit specific requires make to the generic code,
+            //the sencha app will not be able to either refresh or build the application.
+
+            //Note:
+            //Two global controllers take over from here: Root & Auth. The main actor is the Root controller - see the code to see
+            //how it interacts with the Auth controller.
         },
 
         onAppUpdate: function () {
