@@ -28,12 +28,14 @@
             //init the GUI
             Ext.create('MapHive.view.main.Viewport');
 
-            Ext.create('mh.widget.auth.LockingScreen').show();
+            // Ext.create('mh.widget.auth.LockingScreen').show();
+            //
+            // Ext.create('Ext.window.Window', {
+            //     title: 'Window title',
+            //     html: 'Am I gonna by styled or what?'
+            // }).show();
 
-            Ext.create('Ext.window.Window', {
-                title: 'Window title',
-                html: 'Am I gonna by styled or what?'
-            }).show();
+            
         }
     });
 }());

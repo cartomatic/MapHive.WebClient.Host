@@ -46,12 +46,13 @@
             //otherwise requires will cause problems!
 
             var me = this;
-            setTimeout(
-                function(){
-                    me.fireGlobal('auth::userauthenticated', 'some auth feedback data');
-                },
-                1000
-            );
+            // setTimeout(
+            //     function(){
+            //         me.fireGlobal('auth::userauthenticated', 'some auth feedback data');
+            //     },
+            //     1000
+            // );
+            me.fireGlobal('auth::userauthenticated', 'some auth feedback data');
         }
     });
 

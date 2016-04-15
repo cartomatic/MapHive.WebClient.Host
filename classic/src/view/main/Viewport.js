@@ -5,17 +5,46 @@
     'use strict';
 
     Ext.define('MapHive.view.main.Viewport', {
-        extend: 'Ext.container.Viewport',
+        extend: 'Ext.panel.Panel',
+
+        plugins: 'viewport',
 
         requires: [
-            'Ext.layout.container.Fit'
+            'Ext.button.Button',
+            'Ext.layout.container.Fit',
+            'Ext.plugin.Viewport',
+            'Ext.toolbar.Fill',
+            'Ext.toolbar.Toolbar',
+            'MapHive.view.main.ViewportController'
         ],
+
+        xtype: 'main-view',
+
+        controller: 'main-view',
 
         layout: 'fit',
 
-        html: 'This is gonna be the classic app Viewport',
-
-        items: [
+            dockedItems: [
+            {
+                xtype: 'toolbar',
+                dock: 'top',
+                items: [
+                    {
+                        xtype: 'button',
+                        scale: 'medium',
+                        ui: 'black-button',
+                        iconCls: 'x-fa fa-th-large',
+                        listeners: {
+                            click: 'onBtnClick'
+                        }
+                    },
+                    '->',
+                    {
+                        xtype: 'button',
+                        text: 'some other btn'
+                    }
+                ]
+            }
         ]
     });
 
