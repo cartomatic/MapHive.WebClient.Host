@@ -9,16 +9,15 @@
 
         plugins: 'viewport',
 
-        requires: [
-            'Ext.button.Button',
-            'Ext.layout.container.Fit',
-            'Ext.plugin.Viewport',
-            'Ext.toolbar.Fill',
-            'Ext.toolbar.Toolbar',
-            'MapHive.view.main.ViewportController'
-        ],
+    requires: [
+        'Ext.button.Button',
+        'Ext.layout.container.Fit',
+        'Ext.plugin.Viewport',
+        'Ext.toolbar.Fill',
+        'MapHive.view.main.ViewportController'
+    ],
 
-        xtype: 'main-view',
+    xtype: 'main-view',
 
         controller: 'main-view',
 

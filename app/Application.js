@@ -11,68 +11,15 @@
      * initialization details.
      */
     Ext.define('MapHive.Application', {
-        extend: 'Ext.app.Application',
+        extend: 'mh.Application',
+
+        requires: [
+            'MapHive.AppLauncher'
+        ],
 
         name: 'MapHive',
 
-        requires: [
-            'mh.util.console.Custom'
-        ],
-
-        mixins: [
-            'mh.util.console.Formatters'
-        ],
-
-        //global shared controllers - they fire up automatically
-        controllers: [
-            'MapHive.controller.Root',
-            'MapHive.controller.Auth'
-        ],
-
-        //global / shared stores
-        stores: [
-        ],
-
-        //app's default route. if no alternative route is provided
-        //this becomes the active route upon start
-        defaultToken : 'dashboard',
-
-        init: function(){
-
-            console.log('MapHive - Hello there mate!_s::3d,40px');
-
-            //<debug>
-            console.log(this.cStdIcon('info'), this.cDbgHdr('app'),'initialised');
-            //</debug>
-        },
-
-        launch: function () {
-
-            //hide the splash screen
-            splash.hide();
-
-            //<debug>
-            console.log(this.cStdIcon('info'), this.cDbgHdr('app'),'launched');
-            //</debug>
-
-            //Note:
-            //In the generic code cannot require modules that are toolkit specific!
-            //This is important as if some toolkit specific requires make to the generic code,
-            //the sencha app will not be able to either refresh or build the application.
-
-            //Note:
-            //Two global controllers take over from here: Root & Auth. The main actor is the Root controller - see the code to see
-            //how it interacts with the Auth controller.
-        },
-
-        onAppUpdate: function () {
-            Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-                function (choice) {
-                    if (choice === 'yes') {
-                        window.location.reload();
-                    }
-                }
-            );
-        }
+        //custom launcher class. this is where most app customisations take place
+        appLauncher: 'MapHive.AppLauncher'
     });
 }());

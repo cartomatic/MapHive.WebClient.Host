@@ -5,25 +5,24 @@
     'use strict';
     
     /**
-     * Created by domin on 4/14/2016.
+     * Customised app launcher
      */
     Ext.define('MapHive.AppLauncher', {
 
-        requires: [
-            'Ext.tip.QuickTipManager',
-            'Ext.window.Window',
-            'MapHive.view.main.Viewport',
-            'mh.widget.auth.LockingScreen',
+    requires: [
+        'Ext.tip.QuickTipManager',
+        'MapHive.view.main.Viewport'
 
-            'Ext.window.Window'
-        ],
+    ],
 
-        constructor: function(config){
+    constructor: function(config){
             //init Ext quick tips
             //Ext.QuickTips.interceptTitles = true;
             Ext.QuickTips.init();
 
             //Do whatever the customisation are required - running in an iframe vs standalone...
+
+            //TODO - prepare the host insfrastructure - so can instantiate and communicate with the hosted apps!
 
             //init the GUI
             Ext.create('MapHive.view.main.Viewport');
