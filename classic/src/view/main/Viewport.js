@@ -7,10 +7,14 @@
     Ext.define('MapHive.view.main.Viewport', {
         extend: 'Ext.container.Viewport',
 
+        requires: [
+            'Ext.layout.container.Fit'
+        ],
+
         layout: 'fit',
 
         html: 'This is gonna be the classic app Viewport',
-    
+
         items: [
         ]
     });

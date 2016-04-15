@@ -13,11 +13,15 @@
     Ext.define('MapHive.Application', {
         extend: 'Ext.app.Application',
 
+        name: 'MapHive',
+
         requires: [
             'mh.util.console.Custom'
         ],
 
-        name: 'MapHive',
+        mixins: [
+            'mh.util.console.Formatters'
+        ],
 
         //global shared controllers - they fire up automatically
         controllers: [
@@ -35,8 +39,10 @@
 
         init: function(){
 
+            console.log('MapHive - Hello there mate!_s::3d,40px');
+
             //<debug>
-            console.warn('[APP] initialised');
+            console.log(this.cStdIcon('info'), this.cDbgHdr('app'),'initialised');
             //</debug>
         },
 
@@ -46,7 +52,7 @@
             splash.hide();
 
             //<debug>
-            console.warn('[APP] launched');
+            console.log(this.cStdIcon('info'), this.cDbgHdr('app'),'launched');
             //</debug>
 
             //Note:

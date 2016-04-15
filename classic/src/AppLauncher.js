@@ -13,7 +13,9 @@
             'Ext.tip.QuickTipManager',
             'Ext.window.Window',
             'MapHive.view.main.Viewport',
-            'mh.widget.auth.LockingScreen'
+            'mh.widget.auth.LockingScreen',
+
+            'Ext.window.Window'
         ],
 
         constructor: function(config){

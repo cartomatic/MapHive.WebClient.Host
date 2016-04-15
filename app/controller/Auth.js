@@ -11,7 +11,8 @@
         extend: 'Ext.app.Controller',
 
         mixins: [
-            'mh.msgBus.Global'
+            'mh.msgBus.Global',
+            'mh.util.console.Formatters'
         ],
 
         /**
@@ -20,7 +21,7 @@
 
         init: function(){
             //<debug>
-            console.warn("[AUTH CTRL initialised]");
+            console.log(this.cStdIcon('info'), this.cDbgHdr('auth ctrl'), 'initialised');
             //</debug>
 
             //setup the required evt listeners
@@ -30,7 +31,7 @@
 
         onLaunch: function(){
             //<debug>
-            console.warn("[AUTH CTRL launched]");
+            console.log(this.cStdIcon('info'), this.cDbgHdr('auth ctrl'), 'launched');
             //</debug>
 
             //so far nothing to do here

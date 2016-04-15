@@ -13,7 +13,8 @@
         extend: 'Ext.app.Controller',
 
         mixins: [
-            'mh.msgBus.Global'
+            'mh.msgBus.Global',
+            'mh.util.console.Formatters'
         ],
 
         requires: [
@@ -26,7 +27,7 @@
 
         init: function(){
             //<debug>
-            console.warn("[ROOT CTRL initialised]");
+            console.log(this.cStdIcon('info'), this.cDbgHdr('root ctrl'), 'initialised');
             //</debug>
 
             //setup the required evt listeners
@@ -35,7 +36,7 @@
 
         onLaunch: function(){
             //<debug>
-            console.warn("[ROOT CTRL launched]");
+            console.log(this.cStdIcon('info'), this.cDbgHdr('rot ctrl'), 'launched');
             //</debug>
 
             //do whatever needs to be done...
