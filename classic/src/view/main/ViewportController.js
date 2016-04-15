@@ -50,7 +50,7 @@
                 columnWidth: 0.33,
                 margin: '0 5 5 0', //trbl
                 listeners: {
-                    click: function(){console.warn('WHOAAAA'); btn.Menu.hide(); document.getElementById(me.iframeId).src="http://cartomatic.pl";}
+                    click: function(){console.warn('WHOAAAA'); btn.Menu.hide(); document.getElementById(me.iframeId).src="https://apps.maphive.local/_hosted";}
                 }
             }));
 

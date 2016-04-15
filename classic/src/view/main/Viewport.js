@@ -9,6 +9,8 @@
 
         plugins: 'viewport',
 
+        border: false,
+
     requires: [
         'Ext.button.Button',
         'Ext.layout.container.Fit',
