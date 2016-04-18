@@ -67,7 +67,7 @@
                     click: function(b, evt, eOpts){
                         //evt.stopPropagation();
                         console.warn('WHOAAAA');
-                        return;
+
                         btn.Menu.hide();
                         document.getElementById(me.iframeId).src="https://apps.maphive.local/_hosted";
                     }

@@ -25,7 +25,16 @@
             //TODO - prepare the host insfrastructure - so can instantiate and communicate with the hosted apps!
 
             //init the GUI
-            Ext.create('MapHive.view.main.Viewport');
+            Ext.create('MapHive.view.main.Viewport', {
+                dockedItems: [
+                    {
+                        xtype: 'mh-app-bar',
+                        api: {
+                            apps: 'packages/local/mh/devFakeApi/GetApps.json'
+                        }
+                    }
+                ]
+            });
 
             // Ext.create('mh.widget.auth.LockingScreen').show();
             //

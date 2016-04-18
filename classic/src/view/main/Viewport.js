@@ -11,42 +11,17 @@
 
         border: false,
 
-    requires: [
-        'Ext.button.Button',
-        'Ext.layout.container.Fit',
-        'Ext.plugin.Viewport',
-        'Ext.toolbar.Fill',
-        'MapHive.view.main.ViewportController'
-    ],
+        requires: [
+            'Ext.layout.container.Fit',
+            'Ext.plugin.Viewport',
+            'MapHive.view.main.ViewportController'
+        ],
 
-    xtype: 'main-view',
+        xtype: 'main-view',
 
         controller: 'main-view',
 
-        layout: 'fit',
-
-            dockedItems: [
-            {
-                xtype: 'toolbar',
-                dock: 'top',
-                items: [
-                    {
-                        xtype: 'button',
-                        scale: 'medium',
-                        ui: 'black-button',
-                        iconCls: 'x-fa fa-th-large',
-                        listeners: {
-                            click: 'onBtnClick'
-                        }
-                    },
-                    '->',
-                    {
-                        xtype: 'button',
-                        text: 'some other btn'
-                    }
-                ]
-            }
-        ]
+        layout: 'fit'
     });
 
 }());
