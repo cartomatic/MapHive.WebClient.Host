@@ -11,8 +11,8 @@
 
     requires: [
         'Ext.tip.QuickTipManager',
-        'MapHive.view.main.Viewport'
-
+        'MapHive.view.main.Viewport',
+        'mh.module.appBar.AppBar'
     ],
 
     constructor: function(config){
