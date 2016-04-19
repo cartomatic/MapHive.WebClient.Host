@@ -27,8 +27,14 @@ var splash = (function() {
             hidden = false;
 
         this.init = function(){
-            //emit html to dom
-            document.write(getHtml());
+            //suppress splash if required.
+            if(window.location.href.indexOf('suppress-splash:true') > -1){
+                this.hidden = true;
+            }
+            else {
+                //emit html to dom
+                document.write(getHtml());
+            }
         };
 
         this.hide = function(){
