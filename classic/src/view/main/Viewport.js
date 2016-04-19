@@ -21,6 +21,13 @@
 
         controller: 'main-view',
 
+        config: {
+            /**
+             * Id of an iframe the application uses to host other apps; this id is used to create an iframe container the configured apps are loaded into.
+             */
+            hostedAppsIframeId: null
+        },
+
         layout: 'fit'
     });
 
