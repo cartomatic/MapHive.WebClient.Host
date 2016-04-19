@@ -37,7 +37,7 @@
             });
 
             //iframe has been set up, so just notify whoever cares about it - app reloader module in thi case
-            this.fireGlobal('apploader::setupiframe', iframeId);
+            this.fireGlobal('root::setuphostiframe', iframeId);
         }
     });
 
