@@ -12,11 +12,16 @@
         extend: 'Ext.app.ViewController',
         alias: 'controller.main-view',
 
-        requires: [
-            'Ext.button.Button',
-            'Ext.layout.container.Column',
-            'Ext.panel.Panel',
-            'Ext.window.Window'
+    requires: [
+        'Ext.button.Button',
+        'Ext.container.Container',
+        'Ext.layout.container.Column',
+        'Ext.panel.Panel',
+        'Ext.window.Window'
+    ],
+
+    mixins: [
+            'mh.msgBus.Global'
         ],
 
         /**
@@ -24,13 +29,15 @@
          */
         init: function() {
 
-            var iframeId = this.getView().getHostedAppsIframeId();
+            var iframeId = 'hosted-apps-iframe';
 
-            if(!iframeId){
-                throw 'hostedAppsIframeId not specified!';
-            }
+            this.getView().add({
+                xtype: 'container',
+                html: '<iframe id="' + iframeId + '" src="about:blank" style="width:100%;height:100%;border:none;">'
+            });
 
-            this.getView().setHtml('<iframe id="' + iframeId + '" src="about:blank" style="width:100%;height:100%;border:none;">');
+            //iframe has been set up, so just notify whoever cares about it - app reloader module in thi case
+            this.fireGlobal('apploader::setupiframe', iframeId);
         }
     });
 

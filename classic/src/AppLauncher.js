@@ -26,17 +26,13 @@
 
             //init the GUI
             Ext.create('MapHive.view.main.Viewport', {
-
-                hostedAppsIframeId: 'hosted-apps-iframe',
-                
                 dockedItems: [
                     //use the default app toolbar
                     {
                         xtype: 'mh-app-bar',
                         api: {
                             apps: 'packages/local/mh/devFakeApi/GetApps.json'
-                        },
-                        hostedAppsIframeId: 'hosted-apps-iframe'
+                        }
                     }
                 ]
             });
