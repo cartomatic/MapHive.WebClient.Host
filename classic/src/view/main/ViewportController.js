@@ -21,7 +21,7 @@
     ],
 
     mixins: [
-            'mh.msgBus.Global'
+            'mh.communication.MsgBus'
         ],
 
         /**
