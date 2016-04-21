@@ -34,6 +34,9 @@
                 ]
             });
 
+            //TODO - load the configured app! - gimmeapps or something
+            //TODO - go through the load app event, so all still evt based!
+
             // Ext.create('mh.widget.auth.LockingScreen').show();
             //
             // Ext.create('Ext.window.Window', {
