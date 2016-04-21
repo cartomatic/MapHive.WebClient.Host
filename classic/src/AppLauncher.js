@@ -29,10 +29,7 @@
                 dockedItems: [
                     //use the default app toolbar
                     {
-                        xtype: 'mh-app-bar',
-                        api: {
-                            apps: 'packages/local/mh/devFakeApi/GetApps.json'
-                        }
+                        xtype: 'mh-app-bar'
                     }
                 ]
             });
