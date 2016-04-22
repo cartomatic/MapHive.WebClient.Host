@@ -7,21 +7,28 @@
     Ext.define('MapHive.view.main.Viewport', {
         extend: 'Ext.panel.Panel',
 
-        plugins: 'viewport',
+    requires: [
+        'Ext.layout.container.VBox',
+        'Ext.plugin.Viewport',
+        'MapHive.view.main.ViewportController'
+    ],
+
+    plugins: 'viewport',
 
         border: false,
 
-        requires: [
-            'Ext.layout.container.Fit',
-            'Ext.plugin.Viewport',
-            'MapHive.view.main.ViewportController'
-        ],
+        ui: 'green-panel',
 
-        xtype: 'main-view',
+        title: 'I am a <b>"HOST"</b> app example running @' + ' <b>' + window.location.href + '</b>',
+
+    xtype: 'main-view',
 
         controller: 'main-view',
 
-        layout: 'fit'
+        layout: {
+            type: 'vbox',
+            align: 'stretch'
+        }
     });
 
 }());

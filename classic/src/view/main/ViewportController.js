@@ -31,10 +31,22 @@
 
             var iframeId = 'hosted-apps-iframe';
 
-            this.getView().add({
-                xtype: 'container',
-                html: '<iframe id="' + iframeId + '" src="about:blank" style="width:100%;height:100%;border:none;">'
-            });
+            this.getView().add(
+                [
+                    {
+                        xtype: 'panel',
+                        items: [
+                            { xtype: 'btn-postchild-test' },
+                            { xtype: 'btn-postchilddrilldown-test' }
+                        ]
+                    },
+                    {
+                        flex: 1,
+                        xtype: 'container',
+                        html: '<iframe id="' + iframeId + '" src="about:blank" style="width:100%;height:100%;border:none;">'
+                    }
+                ]
+            );
 
             //iframe has been set up, so just notify whoever cares about it - app reloader module in thi case
             this.fireGlobal('root::setuphostiframe', iframeId);
