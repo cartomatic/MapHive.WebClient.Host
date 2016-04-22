@@ -5,7 +5,7 @@
     'use strict';
     
     /**
-     * Customised app launcher
+     * Customised app launcher; this is the real entry point for the app UI creation.
      */
     Ext.define('MapHive.AppLauncher', {
 
@@ -33,18 +33,6 @@
                     }
                 ]
             });
-
-            //TODO - load the configured app! - gimmeapps or something
-            //TODO - go through the load app event, so all still evt based!
-
-            // Ext.create('mh.widget.auth.LockingScreen').show();
-            //
-            // Ext.create('Ext.window.Window', {
-            //     title: 'Window title',
-            //     html: 'Am I gonna by styled or what?'
-            // }).show();
-
-            
         }
     });
 }());
