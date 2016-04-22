@@ -19,6 +19,8 @@
 
         name: 'MapHive',
 
+        
+
         //custom launcher class. this is where most app customisations take place
         appLauncher: 'MapHive.AppLauncher'
     });

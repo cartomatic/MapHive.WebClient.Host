@@ -15,6 +15,7 @@
     requires: [
         'Ext.button.Button',
         'Ext.container.Container',
+        'Ext.form.field.Display',
         'Ext.layout.container.Column',
         'Ext.panel.Panel',
         'Ext.window.Window'
@@ -41,6 +42,10 @@
                         ]
                     },
                     {
+                        xtype: 'displayfield',
+                        value: '<br/><div id="msgbus_xwindowtest_feedback" style="height: 20px;"></div><br/>'
+                    },
+                    {
                         flex: 1,
                         xtype: 'container',
                         html: '<iframe id="' + iframeId + '" src="about:blank" style="width:100%;height:100%;border:none;">'
@@ -50,6 +55,31 @@
 
             //iframe has been set up, so just notify whoever cares about it - app reloader module in thi case
             this.fireGlobal('root::setuphostiframe', iframeId);
+
+            this.watchGlobal('msgbus::xwindowtest', function(eData){
+
+                var el = Ext.get('msgbus_xwindowtest_feedback');
+                el.setHtml('[msgbus::xwindowtest] evt received from: ' + eData.origin);
+                el.animate({
+                    to: {
+                        duration: 250,
+                        backgroundColor: '#FECC00'
+                    },
+                    listeners: {
+                        afteranimate: function(){
+                            setTimeout(
+                                function(){
+                                    el.animate({
+                                        duration: 250,
+                                        backgroundColor: '#FFFFFF'
+                                    });
+                                },
+                                1000
+                            );
+                        }
+                    }
+                });
+            });
         }
     });
 
