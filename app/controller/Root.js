@@ -14,7 +14,6 @@
          * Called when the view is created
          */
         init: function(){
-
             //first make sure to init the base stuff!
             this.superclass.init.call(this);
         }
