@@ -48,6 +48,10 @@
                         value: '<br/><div id="msgbus_xwindowtest_feedback" style="height: 20px;"></div><br/>'
                     },
                     {
+                        xtype: 'displayfield',
+                        value: '<br/><br/><div id="msgbus_xwindowroutertest_feedback" style="height: 20px;"></div>'
+                    },
+                    {
                         flex: 1,
                         xtype: 'container',
                         reference: 'appContainer',
@@ -69,6 +73,32 @@
 
                 var el = Ext.get('msgbus_xwindowtest_feedback');
                 el.setHtml('[msgbus::xwindowtest] evt received from: ' + eData.origin);
+                el.animate({
+                    to: {
+                        duration: 250,
+                        backgroundColor: '#FECC00'
+                    },
+                    listeners: {
+                        afteranimate: function(){
+                            setTimeout(
+                                function(){
+                                    el.animate({
+                                        duration: 250,
+                                        backgroundColor: '#FFFFFF'
+                                    });
+                                },
+                                1000
+                            );
+                        }
+                    }
+                });
+            });
+
+            //this is the xWindow router messaging demo functionality
+            this.watchGlobal('root::applyroute', function(newRoute){
+
+                var el = Ext.get('msgbus_xwindowroutertest_feedback');
+                el.setHtml('[root::applyroute] ' + newRoute);
                 el.animate({
                     to: {
                         duration: 250,
