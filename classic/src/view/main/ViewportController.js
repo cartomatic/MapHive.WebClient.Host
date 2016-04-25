@@ -18,7 +18,9 @@
         'Ext.form.field.Display',
         'Ext.layout.container.Column',
         'Ext.panel.Panel',
-        'Ext.window.Window'
+        'Ext.window.Window',
+        'mh.view.dummy.BtnPostChild',
+        'mh.view.dummy.BtnPostChildDrilldown'
     ],
 
     mixins: [
@@ -61,18 +63,6 @@
             //since this view is a host for the iframed apps, some of them may require own splashscreen, for others customised load mask can be provided
             this.watchGlobal('root::appreloadstart', this.onAppReloadStart, this);
             this.watchGlobal('mhapp::loaded', this.onAppLoaded, this);
-
-            //TODO - load the configured app! - gimmeapps or something
-            //TODO - go through the load app event, so all still evt based!
-
-            // Ext.create('mh.widget.auth.LockingScreen').show();
-            //
-            // Ext.create('Ext.window.Window', {
-            //     title: 'Window title',
-            //     html: 'Am I gonna by styled or what?'
-            // }).show();
-
-
 
             //this is the xWindow messaging demo functionality
             this.watchGlobal('msgbus::xwindowtest', function(eData){
