@@ -19,8 +19,8 @@
         'Ext.layout.container.Column',
         'Ext.panel.Panel',
         'Ext.window.Window',
-        'mh.view.dummy.BtnPostChild',
-        'mh.view.dummy.BtnPostChildDrilldown'
+        'mh.dummy.view.BtnPostChild',
+        'mh.dummy.view.BtnPostChildDrilldown'
     ],
 
     mixins: [
