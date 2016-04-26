@@ -20,7 +20,8 @@
         'Ext.panel.Panel',
         'Ext.window.Window',
         'mh.dummy.view.BtnPostChild',
-        'mh.dummy.view.BtnPostChildDrilldown'
+        'mh.dummy.view.BtnPostChildDrilldown',
+        'mh.dummy.view.BtnModalModeStart'
     ],
 
     mixins: [
@@ -50,6 +51,12 @@
                     {
                         xtype: 'displayfield',
                         value: '<br/><br/><div id="msgbus_xwindowroutertest_feedback" style="height: 20px;"></div>'
+                    },
+                    {
+                        xtype: 'panel',
+                        items: [
+                            { xtype: 'btn-modalmodestart-test', ui: 'red-button'}
+                        ]
                     },
                     {
                         flex: 1,
