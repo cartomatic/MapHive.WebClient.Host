@@ -41,22 +41,21 @@
                         xtype: 'panel',
                         items: [
                             { xtype: 'btn-postchild-test' },
-                            { xtype: 'btn-postchilddrilldown-test' }
-                        ]
-                    },
-                    {
-                        xtype: 'displayfield',
-                        value: '<br/><div id="msgbus_xwindowtest_feedback" style="height: 20px;"></div><br/>'
-                    },
-                    {
-                        xtype: 'displayfield',
-                        value: '<br/><br/><div id="msgbus_xwindowroutertest_feedback" style="height: 20px;"></div>'
-                    },
-                    {
-                        xtype: 'panel',
-                        items: [
+                            { xtype: 'btn-postchilddrilldown-test' },
                             { xtype: 'btn-modalmodestart-test', ui: 'red-button'}
                         ]
+                    },
+                    {
+                        xtype: 'displayfield',
+                        fieldLabel: 'xWindow MsgBus test feedback',
+                        labelWidth: 200,
+                        value: '<div id="msgbus_xwindowtest_feedback" style="height: 20px;"></div>'
+                    },
+                    {
+                        xtype: 'displayfield',
+                        fieldLabel: 'xWindow hash router test feedback',
+                        labelWidth: 200,
+                        value: '<div id="msgbus_xwindowroutertest_feedback" style="height: 20px;"></div>'
                     },
                     {
                         flex: 1,
@@ -102,10 +101,10 @@
             });
 
             //this is the xWindow router messaging demo functionality
-            this.watchGlobal('root::applyroute', function(newRoute){
+            this.watchGlobal('root::applyexternalroute', function(newRoute){
 
                 var el = Ext.get('msgbus_xwindowroutertest_feedback');
-                el.setHtml('[root::applyroute] ' + newRoute);
+                el.setHtml('[root::applyexternalroute] ' + newRoute);
                 el.animate({
                     to: {
                         duration: 250,
