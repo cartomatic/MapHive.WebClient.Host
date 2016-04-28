@@ -20,9 +20,9 @@
             //Ext.QuickTips.interceptTitles = true;
             Ext.QuickTips.init();
 
-            //Do whatever the customisation are required - running in an iframe vs standalone...
+            //disable aria warnings
+            Ext.ariaWarn = Ext.emptyFn;
 
-            //TODO - prepare the host insfrastructure - so can instantiate and communicate with the hosted apps!
 
             //init the GUI
             Ext.create('MapHive.view.main.Viewport', {
