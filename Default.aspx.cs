@@ -12,7 +12,7 @@ namespace MapHive.WebClient.Host
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.InjectMhCfg(Request.RawUrl);
+            Page.InjectMhCfg(Request.Url.AbsoluteUri.Replace(Request.Url.LocalPath, "/"));
         }
     }
 }
