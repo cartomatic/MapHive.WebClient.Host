@@ -10,9 +10,9 @@ namespace MapHive.WebClient.Host
 {
     public partial class Default : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected async void Page_Load(object sender, EventArgs e)
         {
-            Page.InjectMhCfg();
+            await Page.InjectMhCfg("SomeApp,mh");
         }
     }
 }
