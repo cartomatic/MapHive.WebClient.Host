@@ -25,7 +25,9 @@
             'MapHive.controller.Root',
 
             //use the default auth
-            'mh.controller.Auth'
+            'mh.controller.Auth',
+
+            'mh.controller.Splash'
         ],
 
         //custom launcher class. this is where most app customisations take place
