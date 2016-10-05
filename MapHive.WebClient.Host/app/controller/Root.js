@@ -1,6 +1,7 @@
 //Disable some of the JSLint warnings
 /*global window,console,Ext*/
 (function(){
+
     //Make sure strict mode is on
     'use strict';
 
@@ -16,6 +17,13 @@
         init: function(){
             //first make sure to init the base stuff!
             this.superclass.init.call(this);
+        },
+
+        /**
+         * A simple override - host does not use a standard cfg, so needs to suppress the default cfg call
+         */
+        getUserConfiguration: function(){
+            this.fireGlobal('root::launchapp');
         }
     });
 

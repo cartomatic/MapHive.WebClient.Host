@@ -72,7 +72,8 @@
 
             //since this view is a host for the iframed apps, some of them may require own splashscreen, for others customised load mask can be provided
             this.watchGlobal('root::appreloadstart', this.onAppReloadStart, this);
-            this.watchGlobal('mhapp::loaded', this.onAppLoaded, this);
+            this.watchGlobal('mhapp::loaded', this.unmask, this);
+            this.watchGlobal('mhapp::hidehostmask', this.unmask, this);
 
             //this is the xWindow messaging demo functionality
             this.watchGlobal('msgbus::xwindowtest', function(eData){
@@ -134,7 +135,7 @@
             }
         },
 
-        onAppLoaded: function(){
+        unmask: function(){
             this.lookupReference('appContainer').unmask();
         }
     });

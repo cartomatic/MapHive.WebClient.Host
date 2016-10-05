@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <title>TestHive@MapHive</title>
+    
+    <!--Client cfg-->
+    <script src="ClientConfiguration.ashx"></script>
 
     <!--splash screen-->
     <link rel="stylesheet" href="splash/splash.css" type="text/css">
