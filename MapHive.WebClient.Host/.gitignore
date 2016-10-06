@@ -39,6 +39,8 @@ build/
 #new in 6
 modern.json
 classic.json
+modern.jsonp
+classic.jsonp
 
 bootstrap.css
 bootstrap.js
