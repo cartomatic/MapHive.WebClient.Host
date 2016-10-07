@@ -51,7 +51,7 @@
             this.fireGlobal('root::loadhostedapp');
 
             //start the external route watcher - this will watch changes advised by a child, and pass own changes to a child
-            this.fireGlobal('root:watchexternalroutes', {hosted: true});
+            this.fireGlobal('root::watchexternalroutes', {hosted: true});
         }
 
     });
