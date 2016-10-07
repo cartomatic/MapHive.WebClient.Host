@@ -11,7 +11,13 @@
     <title>TestHive@MapHive</title>
     
     <!--Client cfg-->
-    <script src="ClientConfiguration.ashx"></script>
+    <script runat=server>
+    protected string GetTime()
+    {
+        return DateTime.Now.Ticks.ToString();
+    }
+    </script>
+    <script src="ClientConfiguration.ashx?t=<%=GetTime()%>"></script>
 
     <!--splash screen-->
     <link rel="stylesheet" href="splash/splash.css" type="text/css">
